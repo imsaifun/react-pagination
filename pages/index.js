@@ -10,8 +10,6 @@ function Home() {
     const [page, setPage] = useState(1);
     const [totalPages, setTotalPages] = useState(0);
 
-    console.log(page);
-
     useEffect(() => {
         const fetchUsers = async () => {
             setLoading(true);

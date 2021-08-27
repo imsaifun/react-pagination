@@ -1,7 +1,7 @@
 function Pagination({ totalPages, handleClick, prev, next, page }) {
     const pages = [...Array(totalPages).keys()].map((item) => item + 1);
 
-    console.log(totalPages);
+
     return (
         <>
             <button onClick={() => prev()} disabled={page <= 1}>
