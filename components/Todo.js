@@ -1,6 +1,4 @@
-
-
-function Home() {
+function Todo() {
     return (
         <div>
             Hello
@@ -8,4 +6,4 @@ function Home() {
     )
 }
 
-export default Home
+export default Todo

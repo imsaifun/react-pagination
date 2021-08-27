@@ -1,6 +1,4 @@
-
-
-function Home() {
+function Filter() {
     return (
         <div>
             Hello
@@ -8,4 +6,4 @@ function Home() {
     )
 }
 
-export default Home
+export default Filter
