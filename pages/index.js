@@ -10,7 +10,7 @@ function Home() {
     const [page, setPage] = useState(1);
     const [totalPages, setTotalPages] = useState(0);
 
-    console.log(totalPages);
+    console.log(page);
 
     useEffect(() => {
         const fetchUsers = async () => {
@@ -21,16 +21,22 @@ function Home() {
             setLoading(false);
             setUsers(res.data.results);
 
-            setTotalPages( Math.ceil(res.data.results.length / USER_PER_PAGE))
+            setTotalPages(Math.ceil(res.data.results.length / USER_PER_PAGE));
         };
 
         fetchUsers();
     }, []);
 
-
-    const handleClick = num => {
+    const handleClick = (num) => {
         setPage(num);
-    }
+    };
+
+    const prev = () => {
+        setPage(page - 1);
+    };
+    const next = () => {
+        setPage(page + 1);
+    };
 
     return (
         <>
@@ -39,7 +45,13 @@ function Home() {
             ) : (
                 <>
                     <Users users={users} page={page} />
-                    <Pagination totalPages ={totalPages} handleClick={handleClick}/>
+                    <Pagination
+                        totalPages={totalPages}
+                        handleClick={handleClick}
+                        prev={prev}
+                        next={next}
+                        page={page}
+                    />
                 </>
             )}
         </>
